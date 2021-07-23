@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, isNavigationFailure } from 'vue-router'
 import Home from '../views/Home.vue'
 
 const routes = [
@@ -21,5 +21,11 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+router.afterEach((to, from, failure) => {
+  if (isNavigationFailure(failure)) {
+    console.log('failed navigation', failure);
+  }
+});
 
 export default router
