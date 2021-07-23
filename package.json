@@ -1,5 +1,5 @@
 {
-  "name": "single-spa-test",
+  "name": "vue-3-single-spa",
   "version": "0.1.0",
   "private": true,
   "scripts": {
